@@ -6,18 +6,18 @@ const app= express()
 const post = require ('./src/posts/post.model')
 
 //
-app.get('/', function(req,res){
+app.get('/api/v1', function(req,res){
     // responding with the data that has been 
-    return res.json(req)
+    return res.json(req.headers)
 })
 
-app.get('/', function(req,res){
+app.get('/api/v1/posts', function(req,res){
     // responding with the data from post
     return res.json([post])
 })
 
 
-app.listen(3000,function{
+app.listen(3000,function(){
     console.log('Malawi')
 })
 
